@@ -1,0 +1,98 @@
+﻿@model IEnumerable<ADAF_District_license>
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-12"> <h4>التحقيقات</h4></div>
+        </div>
+    </div>
+
+    <form asp-action="index">
+        <div class="row">
+            <div class="col-md-1">
+                <label>Search</label>
+            </div>
+            <div class="col-md-4">
+                <input name="id" type="text" />
+            </div>
+            <div class="col-md-2">
+                <input asp-action="index" class="btn-sm btn-info" value="Search" type="submit" />
+            </div>
+        </div>
+
+    </form>
+
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table table-responsive-sm table-bordered">
+        <thead>
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(model => model.ADAF_Branches)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.district_license_type_id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.license_start)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.license_end)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.district_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.district_img)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.license_notes)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ADAF_Branches.branch_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.district_license_type_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.license_start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.license_end)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.district_name)
+                </td>
+                <td>
+                    <img src="~/Upload/ADAF_District_license/@Html.DisplayFor(modelItem =>item.district_img)" width="60" height="60" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.license_notes)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.district_license_id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.district_license_id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.district_license_id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

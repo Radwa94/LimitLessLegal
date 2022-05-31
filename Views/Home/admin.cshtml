@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>welcome @Context.Session.GetString("username").ToString() </h1>
+
+
+@section Scripts {
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}
+
+
+

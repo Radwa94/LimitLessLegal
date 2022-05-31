@@ -1,0 +1,86 @@
+﻿@model LGL_Authorization
+
+@{
+
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card card-info">
+    <div class="card-header">
+        <div class="row">
+            <h3 class="card-title">التوكيلات</h3>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="Create" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="authorization_code" class="control-label"></label>
+                    <input asp-for="authorization_code" class="form-control" />
+                    <span asp-validation-for="authorization_code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="authorization_source" class="control-label"></label>
+                    <input asp-for="authorization_source" class="form-control" />
+                    <span asp-validation-for="authorization_source" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="authorization_character" class="control-label"></label>
+                    <input asp-for="authorization_character" class="form-control" />
+                    <span asp-validation-for="authorization_character" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="authorization_year" class="control-label"></label>
+                    <input asp-for="authorization_year" class="form-control" />
+                    <span asp-validation-for="authorization_year" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label asp-for="authorization_kinds_id" class="control-label"></label>
+                    <select asp-for="authorization_kinds_id" class="form-control" asp-items="ViewBag.authorization_kinds_id"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="authorization_name" class="control-label"></label>
+                    <input asp-for="authorization_name" class="form-control" />
+                    <span asp-validation-for="authorization_name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Client_name" class="control-label"></label>
+                    <input asp-for="Client_name" class="form-control" />
+                    <span asp-validation-for="Client_name" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="float:right">
+                    <img src="wwwroot/Upload/authorization/@Html.DisplayFor(model =>model.authorization_img)" width="60" height="60" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="authorization_img" class="control-label"></label>
+                    <input type="file" name="files" asp-for="authorization_img" class="form-control" />
+                    <span asp-validation-for="authorization_img" class="text-danger"> </span>
+                </div>
+
+
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="authorization_disable" /> @Html.DisplayNameFor(model => model.authorization_disable)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

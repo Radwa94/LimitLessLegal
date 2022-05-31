@@ -1,0 +1,49 @@
+﻿@model Users
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>المستخدمين</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.username)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.userpassword)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.userpassword)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.useremail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.useremail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date_add)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_add)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Permission_group)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Permission_group.permission_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.userId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

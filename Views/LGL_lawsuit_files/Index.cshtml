@@ -1,0 +1,53 @@
+﻿@model IEnumerable<LGL_lawsuit_files>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>ملفات القضايا</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                @Html.DisplayNameFor(model => model.LGL_Lawsuit)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.lawsuit_files_img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.creation_user)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.last_update_user)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LGL_Lawsuit.lawsuit_id)
+            </td>
+            <td>
+                <img src="~/Upload/lawsuit/@Html.DisplayFor(modelItem =>item.lawsuit_files_img)" width="60" height="60" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.creation_user)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_update_user)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.lawsuit_files_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.lawsuit_files_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.lawsuit_files_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

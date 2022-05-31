@@ -1,0 +1,146 @@
+﻿@model IEnumerable<investigation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-12"> <h4>التحقيقات</h4></div>
+        </div>
+    </div>
+</div>
+
+    <form asp-action="index">
+        <div class="row">
+            <div class="col-md-1">
+                <label>Search</label>
+            </div>
+            <div class="col-md-4">
+                <input name="id" type="text" />
+            </div>
+            <div class="col-md-2">
+                <input asp-action="index" class="btn-sm btn-info" value="Search" type="submit" />
+            </div>
+        </div>
+
+    </form>
+
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+
+   <div class="table-responsive">
+    <table id="tblExport" class="table  table-bordered table-sm">
+        <thead>
+         
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(model => model.Noofcomplain)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employeename)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Employeeid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nationalid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.jop)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NatureComplaint)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Invstdate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Decisionafterinvst)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Invstnotes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.department)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Investigator)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Idinvist)
+                </th>
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Invimage)
+                    </th*@>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Noofcomplain)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employeename)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Employeeid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nationalid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.jop.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NatureComplaint)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Invstdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Decisionafterinvst)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Invstnotes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.department.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Investigator)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Idinvist)
+                    </td>
+
+                    <td>
+                        <img src="~/Upload/investigation/@Html.DisplayFor(modelItem =>item.Invimage)" width="60" height="60" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Invimage)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID_investigation">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID_investigation">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID_investigation">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <input type="button" onclick="tableToExcel('tblExport', 'W3C Example Table')" value="Export to Excel">
+    </div>
+</div>
+
+

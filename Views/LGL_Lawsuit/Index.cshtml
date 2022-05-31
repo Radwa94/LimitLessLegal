@@ -1,0 +1,220 @@
+﻿@model IEnumerable<LGL_Lawsuit>
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-12"> <h4>القضايا</h4></div>
+        </div>
+    </div>
+        <div>
+        </div>
+
+        <form asp-action="index">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>المحكمه</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id" type="text" />
+                </div>
+                <div class="col-md-2">
+                    <label>الدائره</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id2" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>نوع القضية</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id3" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>السنه</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id4" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label>الخصم</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id5" type="text" />
+                </div>
+                <div class="col-md-2">
+                    <label>حالة القضية</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id6" type="text" />
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-2">
+                    <label>رقم القضيه</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id7" type="text" />
+                </div>
+                <div class="col-md-2">
+                    <label>الحكم</label>
+                </div>
+                <div class="col-md-4">
+                    <input name="id8" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <input asp-action="index" class="btn-sm btn-info" value="Search" type="submit" />
+                </div>
+            </div>
+
+        </form>
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.lawsuit_number)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cause_year)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LGL_Cause)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.lawsuit_circle)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.lGL_Court)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.sitting_date_first)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.lGL_Litigant)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.LGL_Clients)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.client_type_id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.judgment)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PronouncingJudgment)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.lawsuit_degree)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.trapping_number)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.lGL_Lawsuit_Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.associate_date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.lawsuit_description)
+                    </th>
+                    @*<th>
+                        @Html.DisplayNameFor(model => model.creation_user)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.last_update_user)
+                    </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.lawsuitfile)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lawsuit_number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cause_year)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LGL_Cause.cause_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lawsuit_circle)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lGL_Court.court_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.sitting_date_first)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lGL_Litigant.litigant_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LGL_Clients.client_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.client_type_id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.judgment.Judgmentn)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PronouncingJudgment)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lawsuit_degree)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.trapping_number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lGL_Lawsuit_Status.lawsuit_Status_name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.associate_date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lawsuit_description)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.creation_user)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.last_update_user)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.lawsuitfile)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.lawsuit_id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.lawsuit_id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.lawsuit_id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+</div>

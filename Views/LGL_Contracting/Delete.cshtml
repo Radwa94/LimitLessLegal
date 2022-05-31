@@ -1,0 +1,328 @@
+﻿@model LGL_Contracting
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LGL_Contracting</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.branchesID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.branchesID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID_Contracttybe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID_Contracttybe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.writen_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.writen_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contract_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contract_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.increase_perc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.increase_perc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.yearsnumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.yearsnumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.start_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.start_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.end_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.end_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.owner_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.owner_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.tenant_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.tenant_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.leavetime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.leavetime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Insurance_value)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Insurance_value)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID_TypeAnnualIncrease)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID_TypeAnnualIncrease)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contract_transfer_clause)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contract_transfer_clause)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.licensenumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.licensenumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.medicalarea)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.medicalarea)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Licensedate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Licensedate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ManagingDirector)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ManagingDirector)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contract_notes)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contract_notes)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.creation_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.creation_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.last_update_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.last_update_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conimg)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conimg)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cause_disable)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cause_disable)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year4)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom4)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue4)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year5)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year5)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom5)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom5)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue5)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue5)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year6)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year6)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom6)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom6)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue6)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue6)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year7)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year7)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom7)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom7)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue7)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue7)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year8)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year8)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Startfrom8)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Startfrom8)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Montvalue8)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Montvalue8)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="contracting_id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

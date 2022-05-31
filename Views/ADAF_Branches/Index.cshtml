@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ADAF_Branches>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>الفروع</h1>
+
+<p>
+    <a asp-action="Create">انشاء</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.branch_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.creation_user)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.last_update_user)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cause_disable)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.branch_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.creation_user)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_update_user)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cause_disable)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.branch_id">تعديل</a> |
+                <a asp-action="Details" asp-route-id="@item.branch_id">تفاصيل</a> |
+                <a asp-action="Delete" asp-route-id="@item.branch_id">حذف</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

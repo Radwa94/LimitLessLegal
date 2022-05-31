@@ -1,0 +1,105 @@
+﻿@model investigation
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card card-info">
+    <div class="card-header">
+        <div class="row">
+            <h3 class="card-title">التحقيقات</h3>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="Create" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-3">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Noofcomplain" class="control-label"></label>
+                    <input asp-for="Noofcomplain" class="form-control" />
+                    <span asp-validation-for="Noofcomplain" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Employeename" class="control-label"></label>
+                    <input asp-for="Employeename" class="form-control" />
+                    <span asp-validation-for="Employeename" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Employeeid" class="control-label"></label>
+                    <input asp-for="Employeeid" class="form-control" />
+                    <span asp-validation-for="Employeeid" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Nationalid" class="control-label"></label>
+                    <input asp-for="Nationalid" class="form-control" />
+                    <span asp-validation-for="Nationalid" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="ID_jop" class="control-label"></label>
+                    <select asp-for="ID_jop" class="form-control" asp-items="ViewBag.ID_jop"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NatureComplaint" class="control-label"></label>
+                    <input asp-for="NatureComplaint" class="form-control" />
+                    <span asp-validation-for="NatureComplaint" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Invstdate" class="control-label"></label>
+                    <input asp-for="Invstdate" class="form-control" />
+                    <span asp-validation-for="Invstdate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Decisionafterinvst" class="control-label"></label>
+                    <input asp-for="Decisionafterinvst" class="form-control" />
+                    <span asp-validation-for="Decisionafterinvst" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Invstnotes" class="control-label"></label>
+                    <input asp-for="Invstnotes" class="form-control" />
+                    <span asp-validation-for="Invstnotes" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="ID_Department" class="control-label"></label>
+                    <select asp-for="ID_Department" class="form-control" asp-items="ViewBag.ID_Department"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Investigator" class="control-label"></label>
+                    <input asp-for="Investigator" class="form-control" />
+                    <span asp-validation-for="Investigator" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Idinvist" class="control-label"></label>
+                    <input asp-for="Idinvist" class="form-control" />
+                    <span asp-validation-for="Idinvist" class="text-danger"></span>
+                </div>
+                <div style="float:right">
+                    <img src="wwwroot/Upload/investigation/@Html.DisplayFor(model =>model.Invimage)" width="60" height="60" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Invimage" class="control-label"></label>
+                    <input type="file" name="files" asp-for="Invimage" class="form-control" />
+                    <span asp-validation-for="Invimage" class="text-danger"> </span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

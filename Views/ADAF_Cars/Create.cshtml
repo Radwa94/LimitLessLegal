@@ -1,0 +1,104 @@
+﻿@model ADAF_Cars
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card card-info">
+    <div class="card-header">
+        <div class="row">
+            <h3 class="card-title">السيارات</h3>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="Create" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-3">
+
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="car_board" class="control-label"></label>
+                    <input asp-for="car_board" class="form-control" />
+                    <span asp-validation-for="car_board" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="car_chassis" class="control-label"></label>
+                    <input asp-for="car_chassis" class="form-control" />
+                    <span asp-validation-for="car_chassis" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="car_motor" class="control-label"></label>
+                    <input asp-for="car_motor" class="form-control" />
+                    <span asp-validation-for="car_motor" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="car_brand" class="control-label"></label>
+                    <input asp-for="car_brand" class="form-control" />
+                    <span asp-validation-for="car_brand" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="license_start_date" class="control-label"></label>
+                    <input asp-for="license_start_date" class="form-control" />
+                    <span asp-validation-for="license_start_date" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="license_end_date" class="control-label"></label>
+                    <input asp-for="license_end_date" class="form-control" />
+                    <span asp-validation-for="license_end_date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="license_examination_date" class="control-label"></label>
+                    <input asp-for="license_examination_date" class="form-control" />
+                    <span asp-validation-for="license_examination_date" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="trafiic_name" class="control-label"></label>
+                    <input asp-for="trafiic_name" class="form-control" />
+                    <span asp-validation-for="trafiic_name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="person_used" class="control-label"></label>
+                    <input asp-for="person_used" class="form-control" />
+                    <span asp-validation-for="person_used" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="driver_insurance" class="control-label"></label>
+                    <input asp-for="driver_insurance" class="form-control" />
+                    <span asp-validation-for="driver_insurance" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+            <label asp-for="licenseimg" class="control-label"></label>
+            <input asp-for="licenseimg" class="form-control" />
+            <span asp-validation-for="licenseimg" class="text-danger"></span>
+        </div>*@
+
+                <div style="float:right">
+                    <img src="wwwroot/Upload/ADAF_Cars/@Html.DisplayFor(model =>model.licenseimg)" width="60" height="60" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="licenseimg" class="control-label"></label>
+                    <input type="file" name="files" asp-for="licenseimg" class="form-control" />
+                    <span asp-validation-for="licenseimg" class="text-danger"> </span>
+                </div>
+
+
+               
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

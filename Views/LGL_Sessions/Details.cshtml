@@ -1,0 +1,116 @@
+﻿@model LGL_Sessions
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LGL_Sessions</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LGL_Lawsuit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LGL_Lawsuit.lawsuit_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.type)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.area)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.area)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.court_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.court_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.delay_reason)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.delay_reason)
+        </dd>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.litigant_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.litigant_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.session_next_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.session_next_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.subject)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.subject)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.creation_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.creation_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.last_update_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.last_update_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.finished)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.finished)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.rollno)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.rollno)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.session_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.session_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.decision)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.decision)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.requests)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.requests)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.sessions_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

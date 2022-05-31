@@ -1,0 +1,106 @@
+﻿@model Branchleave
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Branchleave</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.branch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.branch)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Company_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Company_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.name_licens_holder)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.name_licens_holder)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name_responsible_manager)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name_responsible_manager)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.date_being_hired)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.date_being_hired)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nationaid_owner_img)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nationaid_owner_img)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nationaid_manager_img)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nationaid_manager_img)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.card_owner_img)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.card_owner_img)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.card_manager_img)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.card_manager_img)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.license_number_owner)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.license_number_owner)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.License_number_Manager)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.License_number_Manager)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.license_number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.license_number)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.medical_district)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.medical_district)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

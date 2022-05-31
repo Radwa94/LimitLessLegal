@@ -1,0 +1,114 @@
+﻿@model IEnumerable<LGL_Authorization>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-12"> <h4>التوكيلات</h4></div>
+        </div>
+    </div>
+
+    <form asp-action="index">
+        <div class="row">
+            <div class="col-md-1">
+                <label>Search</label>
+            </div>
+            <div class="col-md-4">
+                <input name="id" type="text" />
+            </div>
+            <div class="col-md-2">
+                <input asp-action="index" class="btn-sm btn-info" value="Search" type="submit" />
+            </div>
+        </div>
+
+    </form>
+
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-responsive-sm table-bordered">
+        <thead>
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(model => model.authorization_code)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.authorization_source)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.authorization_character)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.authorization_year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LGL_Authorization_kinds)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.authorization_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Client_name)
+                </th>
+          
+                <th>
+                    @Html.DisplayNameFor(model => model.authorization_img)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.authorization_disable)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.authorization_code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.authorization_source)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.authorization_character)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.authorization_year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LGL_Authorization_kinds.authorization_kinds_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.authorization_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client_name)
+                </td>
+ 
+
+                <td>
+                    <img src="~/Upload/authorization/@Html.DisplayFor(modelItem =>item.authorization_img)" width="60" height="60" />
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.authorization_img)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.authorization_disable)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.authorization_id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.authorization_id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.authorization_id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

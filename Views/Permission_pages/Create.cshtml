@@ -1,0 +1,46 @@
+﻿@model permisions
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>الصلاحيات</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="group_id" class="control-label"></label>
+                <select asp-for="group_id" class="form-control" asp-items="ViewBag.groups"></select>
+                <input type="submit" asp-action="Create" />
+                <input type="submit" asp-action="showme" />
+            </div>
+
+            <div class="form-group">
+                <label  class="control-label">الصلاحيات</label>
+                <hr />
+                @for (int i = 0; i < Model.lstchekbox.Count; i++)
+                {
+                    <input type="hidden" asp-for="lstchekbox[i].page_url" />
+                    <input class="form-check" type="checkbox" asp-for="lstchekbox[i].is_selected"/>
+                    <label asp-for="lstchekbox[i].page_title">@Model.lstchekbox[i].page_title</label>
+                }
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,161 @@
+﻿@model IEnumerable<LGL_Sessions>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <div class="card-body">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-12"> <h4>الجلسات</h4></div>
+        </div>
+    </div>
+
+    <form asp-action="index">
+        <div class="row">
+            <div class="col-md-1">
+                <label>Search</label>
+            </div>
+            <div class="col-md-4">
+                <input name="DateFrom" type="date" />
+            </div>
+            <div class="col-md-4">
+                <input name="DateTo" type="date" />
+            </div>
+            <div class="col-md-2">
+                <input asp-action="index" class="btn-sm btn-info" value="Search" type="submit" />
+            </div>
+        </div>
+
+    </form>
+
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-responsive-sm table-bordered">
+        <thead>
+            <tr class="table-info">
+
+                <th>
+                    @Html.DisplayNameFor(model => model.session_next_date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LGL_Lawsuit.lawsuit_number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.year)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.area)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.court_id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.subject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.session_date)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.litigant_id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.delay_reason)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.creation_user)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.last_update_user)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.finished)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.rollno)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.decision)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.requests)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.session_next_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LGL_Lawsuit.lawsuit_number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.court_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.subject)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.session_date)
+                </td>
+    
+                <td>
+                    @Html.DisplayFor(modelItem => item.litigant_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.delay_reason)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.creation_user)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.last_update_user)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.finished)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.rollno)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.decision)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.requests)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.sessions_id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.sessions_id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.sessions_id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

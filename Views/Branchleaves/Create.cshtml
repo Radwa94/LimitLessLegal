@@ -1,0 +1,144 @@
+﻿@model Branchleave
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card card-info">
+    <div class="card-header">
+        <div class="row">
+            <h3 class="card-title">اوراق الفروع</h3>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="Create" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="branch" class="control-label"></label>
+                    <select asp-for="branch" class="form-control" asp-items="ViewBag.branch"></select>
+                </div>
+                @*<div class="form-group">
+                    <label asp-for="branch" class="control-label"></label>
+                    <input asp-for="branch" class="form-control" />
+                    <span asp-validation-for="branch" class="text-danger"></span>
+                </div>*@
+                <div class="form-group">
+                    <label asp-for="Company_name" class="control-label"></label>
+                    <input asp-for="Company_name" class="form-control" />
+                    <span asp-validation-for="Company_name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="name_licens_holder" class="control-label"></label>
+                    <input asp-for="name_licens_holder" class="form-control" />
+                    <span asp-validation-for="name_licens_holder" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Name_responsible_manager" class="control-label"></label>
+                    <input asp-for="Name_responsible_manager" class="form-control" />
+                    <span asp-validation-for="Name_responsible_manager" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="date_being_hired" class="control-label"></label>
+                    <input asp-for="date_being_hired" class="form-control" />
+                    <span asp-validation-for="date_being_hired" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                @*<div class="form-group">
+            <label asp-for="nationaid_owner_img" class="control-label"></label>
+            <input asp-for="nationaid_owner_img" class="form-control" />
+            <span asp-validation-for="nationaid_owner_img" class="text-danger"></span>
+        </div>*@
+                <div class="form-group">
+                    <label asp-for="nationaid_owner_img" class="control-label"></label>
+                    <input type="file" name="files" asp-for="nationaid_owner_img" class="form-control" />
+                    <span asp-validation-for="nationaid_owner_img" class="text-danger"> </span>
+                </div>
+
+
+                @*<div class="form-group">
+            <label asp-for="nationaid_manager_img" class="control-label"></label>
+            <input asp-for="nationaid_manager_img" class="form-control" />
+            <span asp-validation-for="nationaid_manager_img" class="text-danger"></span>
+        </div>*@
+
+                <div class="form-group">
+                    <label asp-for="nationaid_manager_img" class="control-label"></label>
+                    <input type="file" name="files" asp-for="nationaid_manager_img" class="form-control" />
+                    <span asp-validation-for="nationaid_manager_img" class="text-danger"> </span>
+                </div>
+
+                @*<div class="form-group">
+            <label asp-for="card_owner_img" class="control-label"></label>
+            <input asp-for="card_owner_img" class="form-control" />
+            <span asp-validation-for="card_owner_img" class="text-danger"></span>
+        </div>*@
+
+                <div class="form-group">
+                    <label asp-for="card_owner_img" class="control-label"></label>
+                    <input type="file" name="files" asp-for="card_owner_img" class="form-control" />
+                    <span asp-validation-for="card_owner_img" class="text-danger"> </span>
+                </div>
+
+                @*<div class="form-group">
+                    <label asp-for="card_manager_img" class="control-label"></label>
+                    <input asp-for="card_manager_img" class="form-control" />
+                    <span asp-validation-for="card_manager_img" class="text-danger"></span>
+                </div>*@
+
+                <div class="form-group">
+                    <label asp-for="card_manager_img" class="control-label"></label>
+                    <input type="file" name="files" asp-for="card_manager_img" class="form-control" />
+                    <span asp-validation-for="card_manager_img" class="text-danger"> </span>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="license_number_owner" class="control-label"></label>
+                    <input asp-for="license_number_owner" class="form-control" />
+                    <span asp-validation-for="license_number_owner" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="License_number_Manager" class="control-label"></label>
+                    <input asp-for="License_number_Manager" class="form-control" />
+                    <span asp-validation-for="License_number_Manager" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="address" class="control-label"></label>
+                    <input asp-for="address" class="form-control" />
+                    <span asp-validation-for="address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="license_number" class="control-label"></label>
+                    <input asp-for="license_number" class="form-control" />
+                    <span asp-validation-for="license_number" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="medical_district" class="control-label"></label>
+                    <input asp-for="medical_district" class="form-control" />
+                    <span asp-validation-for="medical_district" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

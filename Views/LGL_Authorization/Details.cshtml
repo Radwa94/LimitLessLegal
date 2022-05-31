@@ -1,0 +1,85 @@
+﻿@model LGL_Authorization
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LGL_Authorization</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.authorization_code)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.authorization_code)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.authorization_source)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.authorization_source)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.authorization_character)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.authorization_character)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.authorization_year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.authorization_year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LGL_Authorization_kinds)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LGL_Authorization_kinds.authorization_kinds_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.authorization_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.authorization_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Client_name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Client_name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.creation_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.creation_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.last_update_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.last_update_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.authorization_img)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.authorization_img)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.authorization_disable)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.authorization_disable)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.authorization_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

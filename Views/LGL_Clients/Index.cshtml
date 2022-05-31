@@ -1,0 +1,96 @@
+﻿@model IEnumerable<LGL_Clients>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card-body">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-12"> <h4>الموكل</h4></div>
+        </div>
+    </div>
+       <form asp-action="index" method="get">
+        <div>
+            <p>
+                Search :<input type="text" name="searchstring" value="" />
+                <input type="submit" value="search" class="btn btn-info" />
+                <a asp-action="index">Remove Filter</a>
+            </p>
+        </div>
+
+    </form>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-responsive-sm table-bordered">
+        <thead>
+            <tr class="table-info">
+                <th>
+                    @Html.DisplayNameFor(model => model.client_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.client_address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.associate_date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ph1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ph2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nationid)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LGL_Client_types)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.client_disable)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.client_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.client_address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.associate_date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ph1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ph2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nationid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LGL_Client_types.client_type_name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.client_disable)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.client_id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.client_id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.client_id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

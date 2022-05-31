@@ -1,0 +1,61 @@
+﻿@model IEnumerable<LGL_Cause>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card-body">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-sm-12"> <h4></h4></div>
+        </div>
+    </div>
+    <form asp-action="index" method="get">
+        <div>
+            <p>
+                Search :<input type="text" name="searchstring" value="" />
+                <input type="submit" value="search" class="btn btn-info" />
+                <a asp-action="index">Remove Filter</a>
+            </p>
+        </div>
+
+    </form>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table table-responsive-sm table-bordered">
+        <thead>
+            <tr class="table-info">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.cause_name)
+                </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.cause_disable)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cause_name)
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cause_disable)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.cause_id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.cause_id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.cause_id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

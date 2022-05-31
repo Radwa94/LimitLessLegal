@@ -1,0 +1,76 @@
+﻿@model LGL_Clients
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card card-info">
+    <div class="card-header">
+        <div class="row">
+            <h3 class="card-title">الموكل</h3>
+        </div>
+    </div>
+    <hr />
+    <form asp-action="Create" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-3">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="client_name" class="control-label"></label>
+                    <input asp-for="client_name" class="form-control" />
+                    <span asp-validation-for="client_name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="client_address" class="control-label"></label>
+                    <input asp-for="client_address" class="form-control" />
+                    <span asp-validation-for="client_address" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="associate_date" class="control-label"></label>
+                    <input asp-for="associate_date" class="form-control" />
+                    <span asp-validation-for="associate_date" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label asp-for="ph1" class="control-label"></label>
+                    <input asp-for="ph1" class="form-control" />
+                    <span asp-validation-for="ph1" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ph2" class="control-label"></label>
+                    <input asp-for="ph2" class="form-control" />
+                    <span asp-validation-for="ph2" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="nationid" class="control-label"></label>
+                    <input asp-for="nationid" class="form-control" />
+                    <span asp-validation-for="nationid" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="client_type_id" class="control-label"></label>
+                    <select asp-for="client_type_id" class="form-control" asp-items="ViewBag.client_type_id"></select>
+                </div>
+
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="client_disable" /> @Html.DisplayNameFor(model => model.client_disable)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-info" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

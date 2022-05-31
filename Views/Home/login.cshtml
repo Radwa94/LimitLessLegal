@@ -1,0 +1,101 @@
+﻿@model Users
+
+@{
+    ViewData["Title"] = "login";
+    Layout = null;
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/css/adminlte.min.css">
+}
+
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a class="h4">LimitLess  <b>شاشة الدخول </b></a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">من فضلك ادخل المستخدم وكلمة المرور</p>
+
+                <form asp-action="login">
+                    <div class="input-group mb-3">
+                        <input asp-for="username" type="text" class="form-control" placeholder="اسم المستخدم">
+                        <span asp-validation-for="username" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-user"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input asp-for="userpassword" type="password" class="form-control" placeholder="كلمة المرور">
+                        <span asp-validation-for="userpassword" class="text-danger"></span>
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">
+                            <label class="label-dnger">@ViewBag.error</label>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-4">
+
+                            <button type="submit" value="Login" class="btn btn-danger">دخول</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- jQuery -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/js/demo.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script type="text/javascript" src="/lib/jquery.backstretch.min.js"></script>
+<script>
+    $.backstretch("/img/login-bg.jpg", {
+        speed: 500
+    });
+</script>
+
+
+<hr />
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

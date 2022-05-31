@@ -1,0 +1,136 @@
+﻿@model LGL_Lawsuit
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>القضايا</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LGL_Lawsuit</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lawsuit_number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lawsuit_number)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.cause_year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cause_year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LGL_Cause)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LGL_Cause.cause_name)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lawsuit_circle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lawsuit_circle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lGL_Court)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lGL_Court.court_name)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.sitting_date_first)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.sitting_date_first)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lGL_Litigant)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lGL_Litigant.litigant_name)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LGL_Clients)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LGL_Clients.client_id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.client_type_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.client_type_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.judgment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.judgment.ID_Judgment)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PronouncingJudgment)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PronouncingJudgment)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lawsuit_degree)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lawsuit_degree)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trapping_number)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trapping_number)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lGL_Lawsuit_Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lGL_Lawsuit_Status.lawsuit_Status_name)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.associate_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.associate_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lawsuit_description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lawsuit_description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.creation_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.creation_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.last_update_user)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.last_update_user)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.lawsuitfile)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lawsuitfile)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="lawsuit_id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

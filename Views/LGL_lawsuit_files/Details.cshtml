@@ -1,0 +1,43 @@
+﻿@model LGL_lawsuit_files
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ملفات القضايا</h1>
+
+<div>
+    <h4>ملفات القضايا</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LGL_Lawsuit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LGL_Lawsuit.lawsuit_id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.lawsuit_files_img)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/Upload/lawsuit/@Html.DisplayFor(model =>model.lawsuit_files_img)" width="60" height="60" />
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.creation_user)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.creation_user)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.last_update_user)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.last_update_user)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.lawsuit_files_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
